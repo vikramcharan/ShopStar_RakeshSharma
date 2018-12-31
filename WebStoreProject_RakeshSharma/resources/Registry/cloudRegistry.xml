@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cloudRegistry xmlns="http://www.xframium.org/cloudRegistry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xframium.org/cloudRegistry http://www.xframium.org/xsd/deviceManagement/cloudRegistry.xsd">
+	<cloud name="local" hostName="127.0.0.1:4444" userName="" password="" providerType="SELENIUM"/>
+	<cloud name="browserstack" hostName="hub-cloud.browserstack.com" userName="niteshtimilsina1" password="txA6vytjszm5b5UMhJqF" providerType="BROWSERSTACK"/>
+</cloudRegistry>

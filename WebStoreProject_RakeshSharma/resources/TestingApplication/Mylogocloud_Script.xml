@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  	<suite xmlns="http://www.xframium.org/testRegistry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xframium.org/testRegistry http://www.xframium.org/xsd/pageManagement/testRegistry.xsd">
+
+	<model>
+		<page name="Landing_Page" />
+		<page name="Login" />
+	</model>
+
+	<test active="true" name="TC_New_Catalog" timed="true" dataDriver="mylogocloud" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="mylogocloud.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="mylogocloudtwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- ########### Click Login ############  -->
+		<step timed="true" name="Login.CLICKABLE" page="Landing_Page" type="WAIT_FOR" threshold="30000"  >
+			<step timed="true" name="Login" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="1000" />	
+			
+		<!-- ########### Click Create Account ############  -->
+		<step timed="true" name="CreateAnAccount" page="Landing_Page" type="WAIT_FOR" >
+			<step timed="true" name="CreateAnAccount" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="1000" />	
+		
+		<!-- First Name  -->
+		<step timed="true" name="firstName" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.firstname"/>  
+		</step>
+		
+		<!-- Last Name  -->
+		<step timed="true" name="lastName" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.lastname"/> 
+		</step>
+		
+		<!-- Phone  -->
+		<step timed="true" name="Phone" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.phone"/>  
+		</step>
+		
+		<!-- Company  -->
+		<step timed="true" name="Company" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.company"/>  
+		</step>
+		
+		<!-- Email  -->
+		<step timed="true" name="Email" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.email"/>  
+		</step>
+		
+		<!-- Email
+		<step name="EMAIL_ADDRESS" site="Test" page="Landing_Page" type="RANDOM" threshold="30000" wait="0" failureMode="ERROR" context="R_EMAIL_1">
+      		<parameter type="STATIC" name="Domain" value="haloqaautomation.com" />
+    	</step>
+    	<step timed="true" name="Email" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="CONTEXT" value="R_EMAIL_1"/>
+		</step> -->
+		
+		<!-- Confirm Email -->
+		<step timed="true" name="ConfirmEmail" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.email"/>  
+		</step>	
+		
+		<!-- Password  -->
+		<step timed="true" name="Password" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.password"/>  
+		</step>
+		
+		<!-- Confirm Password  -->
+		<step timed="true" name="ConfirmPassword" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.password"/>  
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Click Continue ############  -->
+		<step timed="true" name="Continue" page="Landing_Page" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Verify Logout ############  -->
+		<step timed="true" name="Logout" page="Landing_Page" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Logout" page="Landing_Page" type="EXISTS" threshold="30000" />
+		</step>
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="1000" />	
+		
+		<!-- Confirm Email 
+		<step timed="true" name="LoginEmail" type="SET" page="Landing_Page" threshold="30000">
+			<parameter name="Email" type="CONTEXT" value="R_EMAIL_1"/>  
+		</step>	-->
+	
+		<!-- ########### Click SearchIcon ############  -->
+		<step timed="true" name="SearchIcon.CLICKABLE" page="Landing_Page" type="WAIT_FOR" threshold="30000"  >
+			<step timed="true" name="SearchIcon" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- Enter Item Number  -->
+		<step timed="true" name="Keyword" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.itemnumber"/>  
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Click Search ############  -->
+		<step timed="true" name="Search.CLICKABLE" page="Landing_Page" type="WAIT_FOR" threshold="30000"  >
+			<step timed="true" name="Search" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="5000" />
+		
+		<!-- Enter Quantity  -->
+		<step timed="true" name="Quantity" type="SET" page="Landing_Page" threshold="30000">
+			<parameter type="DATA" value="mylogocloud.quantity"/>  
+		</step>
+		
+		<!-- ########### Click Add to cart ############  -->
+		<step timed="true" name="Addtocart.CLICKABLE" page="Landing_Page" type="WAIT_FOR" threshold="30000"  >
+			<step timed="true" name="Addtocart" page="Landing_Page" type="CLICK" threshold="30000" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="5000" />
+		
+		<!-- ########### Click checkout button ############  -->
+		<step timed="true" name="Checkoutbtn.CLICKABLE" page="Landing_Page" type="WAIT_FOR" threshold="30000"  >
+			<step timed="true" name="Checkoutbtn" page="Landing_Page" type="CLICK"  />
+		</step>
+
+	</test>	
+	
+	
+</suite>	

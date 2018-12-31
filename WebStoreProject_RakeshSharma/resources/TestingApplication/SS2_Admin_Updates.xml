@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  	<suite xmlns="http://www.xframium.org/testRegistry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xframium.org/testRegistry http://www.xframium.org/xsd/pageManagement/testRegistry.xsd">
+
+	<model>
+		<page name="Landing_Page" />
+		<page name="Login" />
+	</model>
+
+	<test active="false" name="TC_New_Catalog" timed="true" dataDriver="catalog" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="STATIC" value="https://www.mylogocloud.com/preview/listvendors.admin" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="nitesh.timilsina"/>  
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="nitesh123"/>  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="catalog.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- ############################### Verifying Template################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="Landing_Page" threshold="60000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+		
+		<!-- Click Catalog -->
+		<step timed="true" name="Catalog.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Catalog" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Item -->
+		<step timed="true" name="Items.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Items" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Expand -->
+		<step timed="true" name="expand.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="expand" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Select ItemFilter  -->
+		<step timed="true" name="ItemFilter" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="All Items"/>  
+		</step>
+		
+		<!-- Search Item ID  -->
+		<step timed="true" name="ItemID" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="catalog.ItemID"/>  
+		</step>
+		
+		<!-- CLick Search to find Item ID -->
+		<step timed="true" name="ItemIDSearch.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="ItemIDSearch" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Item ID  -->
+		<step timed="true" name="tblLstItems.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="tblLstItems" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Advance  -->
+		<step timed="true" name="Advance.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Advance" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Enter Item Weight  -->
+		<step timed="true" name="itemweight" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="catalog.ProductWeight"/>  
+		</step>
+		
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Click Update  -->
+		<step timed="true" name="Update.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Update" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="prop65" page="BROWSER" />
+	
+
+	</test>	
+	
+	<test active="false" name="TC_User_Allowance_Verification" timed="true" dataDriver="allowance" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="allowance.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.userid" />  
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.password" />  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ############################### Verifying the URL ################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Click People ############  -->
+		<step timed="true" name="People" page="shopstartwo" type="WAIT_FOR" >
+			<step timed="true" name="People" page="shopstartwo" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Click Customers ############  -->
+		<step timed="true" name="Customers" page="shopstartwo" type="WAIT_FOR" >
+			<step timed="true" name="Customers" page="shopstartwo" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- searchtype  
+		<step timed="true" name="searchtype" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="email"/> 
+		</step>-->
+		
+		<!-- searchtype -->
+		<step timed="true" name="SearchPeople" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.user"/> 
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############  -->
+		<step timed="true" name="wait" type="WAIT" wait="5000" />	
+		
+		<!-- ########### Click Customers ############  -->
+		<step timed="true" name="loginbutton" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="loginbutton" page="shopstartwo" type="CLICK" />
+		</step>
+		
+		<!-- ########### Click Customers ############  -->
+		<step timed="true" name="loginlink" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="loginlink" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ############################### Verifying the URL ################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
+			<parameter type="STATIC" value="halo.com - My Account" />
+		</step>
+		
+		<!-- Get Allowance Point to verify Allowance Point -->
+		<step timed="true" name="AllowancePoint" type="GET" page="shopstartwo"  threshold="30000" context="point" />
+		
+		<step name="STRING" page="shopstartwo" type="COMPARE2" active="true" threshold="30000" timed="true"  wait="0" >
+			<parameter type="CONTEXT" name="Value One" value="point" />
+			<parameter type="DATA"  name="Value Two" value="allowance.allowancebalance" />
+			<parameter type="STATIC" name="Operator" value="EQUALS" />
+		</step>
+		
+	</test>	
+	
+	<test active="false" name="TC_User_Address" timed="true" dataDriver="address" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="STATIC" value="https://shopstar2-test.halo.com/preview/listvendors.admin" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="ntimilsina"/>  
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="Shop1234"/>  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ############################### Verifying the URL ################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- Click Settings -->
+		<step timed="true" name="Settings.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Settings" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Store Preferences-->
+		<step timed="true" name="StorePreferences.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StorePreferences" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Address Information-->
+		<step timed="true" name="AddressInformation.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="AddressInformation" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!--  Enter company -->
+		<step timed="true" name="Companyname" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.companyname"/>  
+		</step>
+		
+		<!--  Enter address1 -->
+		<step timed="true" name="Address1" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.address1"/>  
+		</step>
+		
+		<!--  Enter city -->
+		<step timed="true" name="City" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.city"/>  
+		</step>
+		
+		<!--  Enter region -->
+		<step timed="true" name="Region" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.region"/>  
+		</step>
+		
+		<!--  Enter country -->
+		<step timed="true" name="Country" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.country"/>  
+		</step>
+		
+		<!--  Enter postal -->
+		<step timed="true" name="postal" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.postal"/>  
+		</step>
+		
+		<!--  Enter phone number -->
+		<step timed="true" name="phone" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="address.phone"/>  
+		</step>
+		
+		
+	</test>		
+
+	<test active="false" name="TC_Email_Change" timed="true" dataDriver="email" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="STATIC" value="https://shopstar2-test.halo.com/preview/listvendors.admin" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="ntimilsina"/>  
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="Shop1234"/>  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="email.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ############################### Verifying the URL ################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- Click template -->
+		<step timed="true" name="Templates.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Templates" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click template -->
+		<step timed="true" name="ManageTemplates.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="ManageTemplates" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Expand -->
+		<step timed="true" name="expand.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="expand" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Search particular word on templates  -->
+		<step timed="true" name="ContextText" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="orders@halo.com"/>  
+		</step>
+		
+		<!-- Click Search -->
+		<step timed="true" name="templatesearch.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="templatesearch" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Edit -->
+		<step timed="true" name="Edit.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Edit" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		
+		
+		
+	</test>	
+	
+	<test active="false" name="TC_Change_Description" timed="true" dataDriver="description" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="description.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="ntimilsina"/>  <!--  nitesh.timilsina--> 
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="Halo1234"/>  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="description.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- ############################### Verifying Template################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="Landing_Page" threshold="60000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+		
+		<!-- Click Catalog -->
+		<step timed="true" name="Catalog.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Catalog" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Items -->
+		<step timed="true" name="Items.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Items" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+			<!-- Click Expand -->
+		<step timed="true" name="expand.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="expand" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Search Item ID  -->
+		<step timed="true" name="ItemID" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="description.ItemID"/>  
+		</step>
+		
+		<!-- CLick Search to find Item ID -->
+		<step timed="true" name="ItemIDSearch.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="ItemIDSearch" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click Item ID  -->
+		<step timed="true" name="tblLstItems.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="tblLstItems" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Enter New Description -->
+		<step timed="true" name="itemdesc" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="description.itemdesc"/>  
+		</step>
+
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Click Update  -->
+		<step timed="true" name="Update.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Update" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+	</test>
+	
+	<test active="false" name="TC_Change_Allowance" timed="true" dataDriver="allowance" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="allowance.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="ntimilsina"/>  <!--  nitesh.timilsina--> 
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="Halo1234"/>  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- ############################### Verifying Template################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="Landing_Page" threshold="60000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+		
+		<!-- ########### Click People ############  -->
+		<step timed="true" name="People" page="shopstartwo" type="WAIT_FOR" >
+			<step timed="true" name="People" page="shopstartwo" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Click Allowances ############  -->
+		<step timed="true" name="Allowances" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="Allowances" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Username  -->
+		<step timed="true" name="SearchUser" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.user"/> 
+		</step>
+		
+		<!-- Click SearchUser -->
+		<step timed="true" name="SearchUser_search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="SearchUser_search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- ########### Click Allowances ############  -->
+		<step timed="true" name="editallowances.CLICKABLE" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="editallowances" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Allowancebalance  -->
+		<step timed="true" name="Allowancebalance" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="allowance.allowancebalance"/> 
+		</step>
+		
+		<!--  Click ok -->
+		<step timed="true" name="AllowancebalanceOk.CLICKABLE" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="AllowancebalanceOk" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+	</test>
+	
+	<test active="false" name="TC_User_Account_Verification" timed="true" dataDriver="user" >
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="user.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
+		 
+		<step type="STATE" name="prop65" page="BROWSER" />
+		
+		<!-- Username  -->
+		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="user.userid" />  
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="user.password" />  
+		</step>
+	
+		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Searchbox  -->
+		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="user.storeid"/>  
+		</step>
+		
+		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<!-- Click store id -->
+		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ############################### Verifying the URL ################ -->
+		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
+			<parameter type="STATIC" value="Orders" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+		<!-- ########### Click People ############  -->
+		<step timed="true" name="People" page="shopstartwo" type="WAIT_FOR" >
+			<step timed="true" name="People" page="shopstartwo" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- ########### Click Customers ############  -->
+		<step timed="true" name="Customers" page="shopstartwo" type="WAIT_FOR" >
+			<step timed="true" name="Customers" page="shopstartwo" type="CLICK" threshold="30000" />
+		</step>
+		
+		<!-- searchtype  
+		<step timed="true" name="searchtype" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="STATIC" value="email"/> 
+		</step>-->
+		
+		<!-- searchtype  -->
+		<step timed="true" name="SearchPeople" type="SET" page="shopstartwo" threshold="30000">
+			<parameter type="DATA" value="user.username"/> 
+		</step>
+		
+		<!-- ########### Adding Hard Wait because of loading issue ############ --> 
+		<step timed="true" name="wait" type="WAIT" wait="1000" />	
+		
+		<!-- User not found 
+		<step timed="true" name="Norecordsfound.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="Norecordsfound" page="shopstartwo" type="EXISTS" threshold="30000" />
+		</step>-->
+		
+		<!-- User not found -->
+		<step timed="true" name="CustomerLocked.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000" >
+			<step timed="true" name="CustomerLocked" page="shopstartwo" type="EXISTS" threshold="30000" />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+	
+	</test>
+	
+	<test active="false" name="TC_SS2_ItemVerification" timed="true" dataDriver="items">
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="items.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="Landing_Page"/>
+
+		<!-- Get Allowance Point to verify Allowance Point -->
+	
+		<step timed="true" name="ItemCode" type="GET" page="shopstartwo"  threshold="30000" context="itemcode" />
+		
+		<step name="STRING" page="shopstartwo" type="COMPARE2" active="true" threshold="30000" timed="true"  wait="0" >
+			<parameter type="CONTEXT" name="Value One" value="itemcode" />
+			<parameter type="DATA"  name="Value Two" value="items.ItemCode" />
+			<parameter type="STATIC" name="Operator" value="EQUALS" />
+		</step>
+	
+		<step type="STATE" name="Test" page="BROWSER" />
+		
+	</test>	
+	
+	<test active="true" name="TC_SS2_ItemSearchVerification" timed="true" dataDriver="itemsearch">
+
+		<step name="URL" type="DEVICE" page="landing_Page" >
+			<parameter type="DATA" value="itemsearch.url" />
+		</step>
+		
+		<step type="BROWSER" name="MAXIMIZE" page="Landing_Page"/>
+		
+		<!-- Item Information-->
+		<step timed="true" name="NoResultFound.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="10000" >
+			<step timed="true" name="NoResultFound" page="shopstartwo" type="EXISTS" />
+		</step>
+		
+		<step type="STATE" name="Test" page="BROWSER" />
+	
+	
+	</test>	
+	
+</suite>	

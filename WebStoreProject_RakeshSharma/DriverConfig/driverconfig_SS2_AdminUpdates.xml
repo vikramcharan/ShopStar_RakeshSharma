@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xFramium xmlns="http://www.xframium.org/xFramiumDriver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xframium.org/xFramiumDriver http://www.xframium.org/xsd/xFramiumDriver.xsd">
+
+
+	<cloud provider="XML" name="local" fileName="../resources/Registry/cloudRegistry.xml" />  
+	<application provider="XML" name="Google" fileName="../resources/Registry/applicationRegistry.xml" />
+	  
+	
+	<!-- ########### Calls in deviceRegistry.xml ############  -->
+	<devices provider="XML" fileName="..\resources\Registry\deviceRegistry.xml">
+
+	</devices>
+	
+	<!-- ########### Reporting Options ############  -->
+	<!-- <driver type="WEB" outputFolder="test-output" personas="EMPTY"> -->
+	<driver type="WEB" outputFolder="test-output"  embeddedServer="true">
+		<artifact type="EXECUTION_RECORD_HTML" />
+		<artifact type="FAILURE_SOURCE" />
+		<artifact type="DEVICE_LOG" />
+		<artifact type="CONSOLE_LOG" />
+		<artifact type="EXECUTION_REPORT_HTML" />
+		<artifact type="REPORTIUM" />
+		<artifact type="DEBUGGER" />
+		<!-- Property for reading an excel file.  Required a comma separated list of tab names. -->
+		<property name="pageManagement.pageData.tabNames">catalog,user,address,email,description,allowance,items,itemsearch</property>
+	</driver>
+
+	<!-- ########### Calls in pageElements file (Object Repository) ############  -->
+	<model provider="XML" siteName="Test" fileName="../resources/PageElements/pageElements_CSE.xml" />
+	
+	
+	<!-- ########### Calls in test suite file (tests.xml) ############  -->
+	<suite provider="XML" fileName="../resources/TestingApplication/SS2_Admin_Updates.xml" />
+	
+	
+	<!-- ########### Calls in data file (pageData.xml) ############  -->
+	<!-- <data fileName="../PageData/testData.xml" /> -->
+	<data  provider="EXCEL" fileName="../pageData/SS2_Admin.xlsx" />
+	
+</xFramium>
+

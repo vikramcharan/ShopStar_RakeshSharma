@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deviceRegistry xsi:schemaLocation="http://www.xframium.org/deviceRegistry http://www.xframium.org/xsd/deviceManagement/deviceRegistry.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/deviceRegistry">
+<!-- BROWSERS -->
+
+		<device active="false" name="Firefox Local" manufacturer="Mozilla" model="Firefox" availableDevices="1" os="Windows" browserName="firefox" osVersion="7" browserVersion="50" cloud="EMBEDDED" />           
+		<device active="true" name="Chrome Local" manufacturer="Google" model="Chrome"  availableDevices="1" os="Windows" browserName="chrome" osVersion="7" cloud="EMBEDDED" />   
+		<device active="false" name="Chrome_Saucelabs" manufacturer="Google" model="Chrome"  availableDevices="1" os="Windows" osVersion="7" browserName="chrome" browserVersion="64" cloud="saucelabs" />
+		<device active="false" name="IE Local" manufacturer="Microsoft" model="IE"  availableDevices="1" os="Windows" browserName="internet explorer" osVersion="7" driverType="WEB" cloud="EMBEDDED" />
+		
+		<!-- BrowserStack -->
+		<device active="false" name="BS_FF" manufacturer="Mozilla" model="Firefox" availableDevices="1" browserName="firefox" driverType="WEB" os="Windows" osVersion="10" browserVersion="61.0" cloud="browserstack" />
+		<device active="false" name="BS_Chrome" manufacturer="Google" model="Chrome" availableDevices="1" browserName="Chrome" driverType="WEB" os="Windows" osVersion="10" browserVersion="70" cloud="browserstack" />
+		<device active="false" name="BS_Safari" manufacturer="Apple" model="Safari" availableDevices="1" browserName="Safari" driverType="WEB" os="OS X" osVersion="High Sierra" browserVersion="11.0" cloud="browserstack" />
+		<device active="false" name="BS_IE" manufacturer="Microsoft" model="IE" availableDevices="1" browserName="IE" driverType="WEB" os="Windows" osVersion="10" browserVersion="11.0" cloud="browserstack" />
+		<device active="false" name="BS_Edge" manufacturer="Microsoft" model="Edge" availableDevices="1" browserName="Edge" driverType="WEB" os="Windows" osVersion="10" browserVersion="17.0" cloud="browserstack" />
+		<device active="false" name="BS_IE_8" manufacturer="Microsoft" model="IE" availableDevices="1" browserName="IE" driverType="WEB" os="Windows" osVersion="7" browserVersion="8.0" cloud="browserstack" />
+		
+</deviceRegistry>
