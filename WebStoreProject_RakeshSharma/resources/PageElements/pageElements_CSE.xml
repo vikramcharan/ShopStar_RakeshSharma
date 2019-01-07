@@ -7,12 +7,8 @@
 			<element name="Sign_In" value="//*[@name='submit']" descriptor="XPATH"/>
 			<element name="UserName" value="//*[@name='userName']" descriptor="XPATH"/>
 			<element name="Passwordtest" value="//*[@name='password']" descriptor="XPATH"/>
-						
-		
-		
             <element name="Login" descriptor="XPATH" value="//a[text()='Login']" />
             <element name="CreateAnAccount" descriptor="XPATH" value="//*[@id='create-new-account']|//*[text()='Create Account']" />
-            
             <element name="Allcategories" descriptor="XPATH" value="//*[text()='  All Categories ']" />
             
             <!-- Create Account -->
@@ -29,8 +25,7 @@
 			<element name="LoginEmail" descriptor="XPATH" value="//input[@id='login']" />
 			<element name="LoginPassword" descriptor="XPATH" value="//input[@id='password']" />
 			<element name="LoginSubmit" descriptor="XPATH" value="//input[@value='Login']" />
-			
-			
+	
 			<!-- Add to Cart -->
 			<element name="FirstItem" descriptor="XPATH" value="(//div[@class='item-img'])[1]" />
 			<element name="ItemQty" descriptor="XPATH" value="//input[@class='qty-input']|(//input[@class='qty'])[1]" />
@@ -50,7 +45,8 @@
 			<element name="ItemOption4" descriptor="XPATH" value="//*[@id='qty_4']" />
 			<element name="ValidateQuantity" descriptor="XPATH" value="//*[text()='Validate Quantity']" />
 			<element name="Addtocart" descriptor="XPATH" value="//i[@class='ti-shopping-cart']" />
-
+			
+			<!-- Address -->
 			<element name="address" descriptor="XPATH" value="//*[@name='addresses.billingAddress.address1']" />
 			<element name="city" descriptor="XPATH" value="//*[@name='addresses.billingAddress.city']" />
 			<element name="country" descriptor="XPATH" value="//*[@name='addresses.billingAddress.countryId']" />
@@ -59,7 +55,8 @@
 			<element name="Continueinfo" descriptor="XPATH" value="//*[@class='btn btn-teal btn-lg']" />
 			<element name="Shippingtype" descriptor="XPATH" value="//*[@id='SHIPTYP_0']" />
 			<element name="Shipping" descriptor="XPATH" value="//*[@class='price-list-block clearfix']//*[text()='Shipping:']" />
-	
+			
+			<!-- Shipping -->
 			<element name="CANADA" descriptor="XPATH" value="//*[contains(text(),'CANADA')]" />
 			<element name="CANADA_TBD" descriptor="XPATH" value="//div[@class='pull-right' and text()='TBD']" />
 			<element name="USA" descriptor="XPATH" value="//*[contains(text(),'USA')]" />
@@ -77,9 +74,7 @@
 			<element name="ccyear" descriptor="XPATH" value="//*[@id='year']" />
 			<element name="cccvv" descriptor="XPATH" value="//*[@id='cvv']" />
 			<element name="ccname" descriptor="XPATH" value="//*[@id='name']" />
-			<element name="cccontinue" descriptor="XPATH" value="//*[@value='Continue']" />
-			
-			
+			<element name="cccontinue" descriptor="XPATH" value="//*[@value='Continue']" />	
 		</page>
 		
 		<page name="MyBrandMall" >
@@ -96,13 +91,9 @@
 			<element name="FirstName" descriptor="XPATH" value="//*[@class='yui-dt-first yui-dt-last yui-dt-even']//*[@class='yui-dt0-col-firstname yui-dt-col-firstname yui-dt-sortable']" />
 			<element name="loginbutton" descriptor="XPATH" value="//*[text()='login']|//*[text()='Login']" />
 			<element name="loginlink" descriptor="XPATH" value="//*[@target='new']" />
-			
-			
-			
 		</page>
 		
 		<page name="prop65" >
-		
 			<element name="SearchIcon" descriptor="XPATH" value="//*[@id='header-navbar-collapse-xs']//a[@class='search-form-btn']|//a[@class='search-form-btn']|//div[@id='menu-search-icon']" />
 			<element name="Keyword" descriptor="XPATH" value="//*[@name='keyword']|//*[@id='key']" />
 			<element name="key" descriptor="XPATH" value="//*[@id='key']" />
@@ -116,7 +107,6 @@
 			<element name="username" descriptor="XPATH" value="//input[@id='login']" />
 			<element name="password" descriptor="XPATH" value="//input[@id='password']" />
 			<element name="login" descriptor="XPATH" value="//div[@class='f-buttons']//input[@type='submit']" />
-		
 		</page>
 		
 		<page name="shopstartwo" >
@@ -190,8 +180,8 @@
 			<element name="loginbutton" descriptor="XPATH" value="//*[text()='login']|//*[text()='Login']" />
 			<element name="loginlink" descriptor="XPATH" value="(//*[@target='new'])[1]" />
 			
+			<!-- Captcha -->
 			<element name="mainCaptcha" descriptor="XPATH" value="//span[@class='captachatext-class']|//canvas[@id='captcha']" />
-
 			<element name="mainCaptchatext" descriptor="XPATH" value="//*[@class='captchainputtext']|//*[@id='captchatxt']" />
 			<element name="Captcha" descriptor="XPATH" value="(//*[@id='mainCaptcha'])[1]" />
 			
@@ -199,14 +189,12 @@
 			<element name="noimage" descriptor="XPATH" value="(//*[contains(@src,'noimage.jpg')])[1]" />
 			<element name="prop65Specialnotice" descriptor="XPATH" value="//span[contains(text(),'Special notice for shipments to the state of California')]/../../a" />
 			<element name="addtocart" descriptor="XPATH" value="(//*[text()=' Add to Cart'])[1]" />
+			
+			<!-- Items -->
 			<element name="color" descriptor="XPATH" value="//*[@id='basketItems[0].attributes[0].optionId_']" />
 			<element name="Inkcolor" descriptor="XPATH" value="//*[@id='basketItems[0].attributes[1].optionId_']" />
 			<element name="Lidcolor" descriptor="XPATH" value="//*[@id='basketItems[0].attributes[1].optionId_']" />
-			
-			
-			
 			<element name="size" descriptor="XPATH" value="//*[@id='basketItems[0].attributes[1].optionId_']" />
-			
 			<element name="quantity" descriptor="XPATH" value="//*[contains(@id,'js-item-qtybox')]" />
 			
 			<element name="ItemCode" descriptor="XPATH" value="//*[contains(@id,'js-item-code')]" />
@@ -220,12 +208,15 @@
 			<element name="ItemAddtoCart" descriptor="XPATH" value="//*[contains(@id,'js-item-addtocartbtn')]" />
 			<element name="ItemInformation" descriptor="XPATH" value="//div[@class='item-details yui3-u']|//div[@class='item-details']" />
 			<element name="NoResultFound" descriptor="XPATH" value="//*[text()='NO RESULTS FOUND']" />
-			
-			
+
 		</page>
 		
-		
-			
+		<page name="bemagenta" >
+			<element name="SearchIcon" descriptor="XPATH" value="//*[@aria-label='search icon']" />	
+			<element name="SearchProduct" descriptor="XPATH" value="//input[@alt='Search Product']" />	
+			<element name="SearchItem" descriptor="XPATH" value="//input[@type='submit']" />
+			<element name="ItemTitle" descriptor="XPATH" value="//*[contains(@id,'js-item-title')]" />
+		</page>
 		
 	</site>
 		

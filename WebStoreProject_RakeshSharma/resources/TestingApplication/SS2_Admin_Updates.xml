@@ -306,88 +306,6 @@
 		
 	</test>		
 
-	<test active="false" name="TC_Email_Change" timed="true" dataDriver="email" >
-
-		<step name="URL" type="DEVICE" page="landing_Page" >
-			<parameter type="STATIC" value="https://shopstar2-test.halo.com/preview/listvendors.admin" />
-		</step>
-		
-		<step type="BROWSER" name="MAXIMIZE" page="shopstartwo" wait="1000"/>
-		 
-		<step type="STATE" name="prop65" page="BROWSER" />
-		
-		<!-- Username  -->
-		<step timed="true" name="username" type="SET" page="shopstartwo" threshold="30000">
-			<parameter type="STATIC" value="ntimilsina"/>  
-		</step>
-		
-		<!-- Password  -->
-		<step timed="true" name="password" type="SET" page="shopstartwo" threshold="30000">
-			<parameter type="STATIC" value="Shop1234"/>  
-		</step>
-	
-		<step timed="true" name="Continue.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="Continue" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Searchbox  -->
-		<step timed="true" name="Searchbox" type="SET" page="shopstartwo" threshold="30000">
-			<parameter type="DATA" value="email.storeid"/>  
-		</step>
-		
-		<step timed="true" name="Search.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="Search" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Click store id -->
-		<step timed="true" name="StoreID.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="StoreID" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<step type="STATE" name="Test" page="BROWSER" />
-		
-		<!-- ############################### Verifying the URL ################ -->
-		<step  type="BROWSER" name="SWITCH_BY_TITLE" page="shopstartwo" threshold="50000" >
-			<parameter type="STATIC" value="Orders" />
-		</step>
-	
-		<step type="STATE" name="Test" page="BROWSER" />
-		
-		<!-- Click template -->
-		<step timed="true" name="Templates.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="Templates" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Click template -->
-		<step timed="true" name="ManageTemplates.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="ManageTemplates" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Click Expand -->
-		<step timed="true" name="expand.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="expand" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Search particular word on templates  -->
-		<step timed="true" name="ContextText" type="SET" page="shopstartwo" threshold="30000">
-			<parameter type="STATIC" value="orders@halo.com"/>  
-		</step>
-		
-		<!-- Click Search -->
-		<step timed="true" name="templatesearch.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="templatesearch" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		<!-- Click Edit -->
-		<step timed="true" name="Edit.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="30000">
-			<step timed="true" name="Edit" page="shopstartwo" type="CLICK"  />
-		</step>
-		
-		
-		
-		
-	</test>	
-	
 	<test active="false" name="TC_Change_Description" timed="true" dataDriver="description" >
 
 		<step name="URL" type="DEVICE" page="landing_Page" >
@@ -642,45 +560,42 @@
 		<step type="STATE" name="Test" page="BROWSER" />
 	
 	</test>
-	
-	<test active="false" name="TC_SS2_ItemVerification" timed="true" dataDriver="items">
 
+	<test active="true" name="TC_BeMagenta_SizeTest" timed="true" dataDriver="catalog" >
+		
 		<step name="URL" type="DEVICE" page="landing_Page" >
-			<parameter type="DATA" value="items.url" />
+			<parameter type="DATA" value="catalog.url" />
 		</step>
 		
-		<step type="BROWSER" name="MAXIMIZE" page="Landing_Page"/>
-
-		<!-- Get Allowance Point to verify Allowance Point -->
-	
-		<step timed="true" name="ItemCode" type="GET" page="shopstartwo"  threshold="30000" context="itemcode" />
+		<step type="BROWSER" name="MAXIMIZE" page="bemagenta" wait="1000"/>
+		 
+		<step type="STATE" name="bemagenta" page="BROWSER" />
 		
-		<step name="STRING" page="shopstartwo" type="COMPARE2" active="true" threshold="30000" timed="true"  wait="0" >
-			<parameter type="CONTEXT" name="Value One" value="itemcode" />
-			<parameter type="DATA"  name="Value Two" value="items.ItemCode" />
+		<!-- Click Search -->
+		<step timed="true" name="SearchIcon.CLICKABLE" page="bemagenta" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="SearchIcon" page="bemagenta" type="CLICK"  />
+		</step>
+		
+		<!-- Password  -->
+		<step timed="true" name="SearchProduct" type="SET" page="bemagenta" threshold="30000">
+			<parameter type="DATA" value="catalog.ItemID" />  
+		</step>
+		
+		<!-- Click Search -->
+		<step timed="true" name="SearchItem.CLICKABLE" page="bemagenta" type="WAIT_FOR" threshold="30000">
+			<step timed="true" name="SearchItem" page="bemagenta" type="CLICK"  />
+		</step>
+		
+		<!-- Getting Item Titile from Website and saving as context -->
+		<step timed="true" name="ItemTitle" type="GET" page="shopstartwo"  threshold="30000" context="ItemTitle" />
+		
+		<!-- Compare -->
+		<step name="STRING" page="bemagenta" type="COMPARE2" active="true" threshold="30000" timed="true"  wait="0" >
+			<parameter type="CONTEXT" name="Value One" value="ItemTitle" />
+			<parameter type="DATA"  name="Value Two" value="catalog.itemtitle" />
 			<parameter type="STATIC" name="Operator" value="EQUALS" />
 		</step>
-	
-		<step type="STATE" name="Test" page="BROWSER" />
 		
-	</test>	
-	
-	<test active="true" name="TC_SS2_ItemSearchVerification" timed="true" dataDriver="itemsearch">
-
-		<step name="URL" type="DEVICE" page="landing_Page" >
-			<parameter type="DATA" value="itemsearch.url" />
-		</step>
-		
-		<step type="BROWSER" name="MAXIMIZE" page="Landing_Page"/>
-		
-		<!-- Item Information-->
-		<step timed="true" name="NoResultFound.VISIBLE" page="shopstartwo" type="WAIT_FOR" threshold="10000" >
-			<step timed="true" name="NoResultFound" page="shopstartwo" type="EXISTS" />
-		</step>
-		
-		<step type="STATE" name="Test" page="BROWSER" />
-	
-	
-	</test>	
+	</test>
 	
 </suite>	
